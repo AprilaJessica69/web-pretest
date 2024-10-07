@@ -50,6 +50,7 @@ class GuruController extends Controller
     function delete($id){
         $guru = Guru::find($id);
         $guru->delete();
-        return redirect()->route('guru.tampil');
+
+        return redirect()->route('guru.tampil')->with(key: 'success', value: 'deleted');
     }
 }
